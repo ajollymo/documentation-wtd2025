@@ -9,9 +9,13 @@ type:
 - how-to
 ---
 
-F5 NGINX Plus provides a flexible replacement for traditional hardware‑based [application delivery controllers](https://www.nginx.com/resources/glossary/application-delivery-controller/) (ADCs). NGINX Plus is a small software package that can be installed just about anywhere – on bare metal, a virtual machine, or a container, and on‑premises or in public, private, and hybrid clouds – while providing the same level of application delivery, high availability, and security offered by legacy ADCs. This guide explains how to migrate an <span style="white-space: nowrap;">F5 BIG-IP</span> Local Traffic Manager (LTM) configuration to the NGINX Plus software application delivery platform, and covers the most commonly used features and configurations to get you started quickly on your migration.
+This guide explains how to migrate an <span style="white-space: nowrap;">F5 BIG-IP</span> Local Traffic Manager (LTM) configuration to the F5 NGINX Plus software application delivery platform. It covers the most essential features and configurations needed for a quick start to your migration process - with a focus on load balancing. 
 
-NGINX Plus and <span style="white-space: nowrap;">BIG-IP LTM</span> both act as a full reverse proxy and load balancer, so that the client sees the load balancer as the application and the backend servers see the load balancer as the client. This allows for great control and fine‑grained manipulation of the traffic. This guide focuses on basic load balancing. For information on extending the configuration with Layer 7 logic and scripting, see the post about [migrating Layer 7 logic](https://www.nginx.com/blog/migrating-layer7-logic-f5-irules-citrix-policies-nginx-plus/) on the NGINX blog. It covers features such as content switching and request routing, rewriting, and redirection.
+NGINX Plus provides a flexible replacement for traditional hardware‑based [application delivery controllers](https://www.f5.com/glossary/application-delivery-controller) (ADCs). NGINX Plus is a small software package that you can install on bare metal, a virtual machine, or a container – whether on‑premises or in public, private, and hybrid clouds. It provides the same level of application delivery, high availability, and security offered by legacy ADCs. 
+
+Both NGINX Plus and <span style="white-space: nowrap;">BIG-IP LTM</span> act as a full reverse proxy and load balancer. This means two things: the client sees the load balancer as the application and the backend servers see the load balancer as the client. This results in greater control and fine‑grained manipulation of the traffic. 
+
+For information on extending the configuration with Layer 7 logic and scripting, see the post about [migrating Layer 7 logic](https://www.nginx.com/blog/migrating-layer7-logic-f5-irules-citrix-policies-nginx-plus/) on the NGINX blog. It covers features such as content switching and request routing, rewriting, and redirection.
 
 <span id="about-nginx"></span>
 ## About NGINX Open Source and NGINX Plus
@@ -20,11 +24,11 @@ NGINX Plus and <span style="white-space: nowrap;">BIG-IP LTM</span> both act as
 
 [NGINX Plus](https://www.f5.com/products/nginx/nginx-plus) is the commercially supported version of <span style="white-space: nowrap;">NGINX Open Source</span>. NGINX Plus is a complete software load balancer and application delivery platform, extending the power of <span style="white-space: nowrap;">NGINX Open Source</span> with a host of enterprise‑ready capabilities that are instrumental to building web applications at scale:
 
-- [Full‑featured HTTP, TCP, and UDP load balancing](https://www.nginx.com/products/nginx/load-balancing/)
+- [Full‑featured HTTP, TCP, and UDP load balancing](https://www.f5.com/products/load-balancing)
 - [Intelligent session persistence](https://www.nginx.com/products/nginx/load-balancing/#session-persistence)
 - [High‑performance reverse proxy]({{< ref "nginx/admin-guide/web-server/reverse-proxy.md" >}})
 - [Caching and offload of dynamic and static content]({{< ref "nginx/admin-guide/content-cache/content-caching.md" >}})
-- [Adaptive streaming to deliver audio and video to any device](https://www.nginx.com/products/nginx/streaming-media/)
+- [Adaptive streaming to deliver audio and video to any device](https://www.f5.com/solutions/service-providers/adaptive-bitrate-streaming-video-traffic-management)
 - [Application-aware health checks](https://docs.nginx.com/nginx/admin-guide/load-balancer/http-health-check/) and [high availability](https://docs.nginx.com/nginx/admin-guide/high-availability/)
 - [Advanced activity monitoring available via a dashboard or API](https://www.nginx.com/products/nginx/live-activity-monitoring/)
 - [Management and real‑time configuration changes with DevOps‑friendly tools](https://www.nginx.com/products/nginx/load-balancing/#load-balancing-api)
